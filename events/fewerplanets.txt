@@ -1,0 +1,38 @@
+namespace = fewerplanets
+
+event = {
+	id = fewerplanets.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				is_colonizable = yes
+				is_capital = no
+				is_colony = no
+				is_homeworld = no
+
+				NOR = {
+					is_ringworld = yes
+					is_planet_class = pc_habitat
+					is_planet_class = pc_relic
+					has_planet_flag = unique_planet
+					has_planet_flag = colony_event
+					has_planet_flag = ratling_planet
+					has_planet_flag = prescripted_ideal
+					has_modifier = "living_sea"
+				}
+			}
+			random_list = {
+				75 = {
+					change_pc = rl_unhabitable_planets
+					reset_planet = yes
+				}
+				25 = { 
+					#Null
+				}
+			}
+		}
+	}
+}
